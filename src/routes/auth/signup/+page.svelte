@@ -2,6 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { authClient } from '$lib/auth-client';
 	import {resolve} from '$app/paths'
+	import { get_user } from '../../user.remote';
 
 	console.log('page load')
 	let error = $state('');
@@ -31,6 +32,7 @@
 		name:username
 		},{
 		onSuccess:async ()=>{
+		  get_user().refresh();
           goto(resolve('/'))
 		}
 		});
@@ -70,3 +72,6 @@
 		<button type="submit">Sign Up</button>
 	</form>
 </div>
+
+
+<p>Already have an Account? <a href={resolve("/auth/login")}>Login</a></p>
