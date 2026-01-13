@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { get_all_posts } from './posts.remote';
+	import { get_all_posts } from '../posts.remote';
 	import {resolve} from '$app/paths'
 </script>
 

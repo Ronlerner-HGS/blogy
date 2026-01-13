@@ -1,6 +1,7 @@
 <script lang="ts">
+	import { resolve } from "$app/paths";
 	import { page } from "$app/state";
-	import { get_post_by_id, update_post } from "../../posts.remote";
+	import { get_post_by_id, update_post } from "../../../posts.remote";
 
     const post = await get_post_by_id(page.params.id!);
 
@@ -27,3 +28,5 @@
     </div>
     <button type="submit">Update</button>
 </form>
+
+<a href = {resolve(`/post/${page.params.id!}`)}> view user</a>

@@ -1,10 +1,11 @@
-import { form, getRequestEvent, query } from '$app/server';
+import { form, getRequestEvent,query } from '$app/server';
 import { auth } from '$lib/auth';
 import { db } from '$lib/server/db';
 import { post } from '$lib/server/db/schema';
 import { error, redirect } from '@sveltejs/kit';
 import { eq } from 'drizzle-orm';
 import * as v from 'valibot';
+
 
 // CAN DO DATABASE STUFF HERE!~
 export const get_all_posts = query(async () => db.query.post.findMany());

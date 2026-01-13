@@ -1,6 +1,5 @@
 <script lang="ts">
-    import { create_post } from "../../posts.remote";
-
+    import { create_post } from '../../../posts.remote';
 </script>
 
 <form {...create_post}>

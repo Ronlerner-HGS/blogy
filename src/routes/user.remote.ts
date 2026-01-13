@@ -9,7 +9,8 @@ export const get_user = query(async () => {
   return {
     id: session?.user.id || null,
     email: session?.user.email || null,
-    name:session?.user.name||null,
+    name: session?.user.name || null,
+    role:session?.user.role || null
   }
 
 })

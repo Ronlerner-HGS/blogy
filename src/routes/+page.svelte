@@ -1,2 +1,15 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+	import { get_all_posts} from './posts.remote'
+	import {resolve} from '$app/paths'
+</script>
+
+
+<ol>
+	{#each await get_all_posts() as post (post.id)}
+		<li>
+		<div>
+		    <a href={resolve(`/post/${post.id}`)}>{post.title}</a>
+		</div>
+		</li>
+	{/each}
+</ol>
